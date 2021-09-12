@@ -3,7 +3,7 @@
 # DIY扩展二合一了，在此处可以增加插件
 # 自行拉取插件之前请SSH连接进入固件配置里面确认过没有你要的插件再单独拉取你需要的插件
 # 不要一下就拉取别人一个插件包N多插件的，多了没用，增加编译错误，自己需要的才好
-# 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码
+ç 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码
 
 
 
@@ -18,11 +18,11 @@ uci set network.lan.delegate='0'                                            # �
 uci commit network                                                          # 不要删除跟注释,除非上面全部删除或注释掉了
 #uci set dhcp.lan.ignore='1'                                                 # 关闭DHCP功能
 #uci commit dhcp                                                             # 跟‘关闭DHCP功能’联动,同时启用或者删除跟注释
-uci set system.@system[0].hostname='OpenWrt-123'                            # 修改主机名称为OpenWrt-123
+uci set system.@system[0].hostname='OpenWrt-r7800'                            # 修改主机名称为OpenWrt-123
 EOF
 
 
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile           # 选择argon为默认主题
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile           # 选择argon为默认主题
 
 sed -i "s/OpenWrt /${Author} Compiled in $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" $ZZZ          # 增加个性名字${Author}默认为你的github账号
 
@@ -43,4 +43,4 @@ sed -i 's/"终端"/"命令窗"/g' `grep "终端" -rl ./`
 sed -i 's/"USB 打印服务器"/"打印服务"/g' `grep "USB 打印服务器" -rl ./`
 sed -i 's/"Web 管理"/"Web"/g' `grep "Web 管理" -rl ./`
 sed -i 's/"管理权"/"改密码"/g' `grep "管理权" -rl ./`
-sed -i 's/"Argon 主题设置"/"Argon设置"/g' `grep "Argon 主题设置" -rl ./`
+#sed -i 's/"Argon 主题设置"/"Argon设置"/g' `grep "Argon 主题设置" -rl ./`
